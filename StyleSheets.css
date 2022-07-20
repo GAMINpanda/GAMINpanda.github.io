@@ -1,0 +1,40 @@
+body {
+    background-color: #2E3131;
+    color: white;
+    font-family: helvetica, monospace;
+    text-align: center;
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+}
+
+ul {
+    text-align: center;
+    list-style-position: inside;
+}
+
+nav li {
+    display: inline;
+}
+
+header {
+    z-index: 2;
+    background: teal;
+    opacity: 1;
+    position: fixed;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+}
+
+div.a {
+    z-index: 1;
+    position: relative;
+    top: 150px;
+}
+
+.whitetext {
+    color: white;
+}
