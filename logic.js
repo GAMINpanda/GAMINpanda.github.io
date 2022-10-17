@@ -72,7 +72,6 @@ update=()=>{
     rule(red, red, -0.5)
     rule(yellow, red, 0.75)
     rule(blue, yellow, 0.3)
-    rule(blue, red, -0.04)
 
     m.clearRect(0,0,1500,700)
     draw(0,0, "black", 1500)
