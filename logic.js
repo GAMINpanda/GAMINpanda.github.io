@@ -1,83 +1,152 @@
-//Code taken from Brainxyz on YT @
-//https://www.youtube.com/watch?v=0Kx4Y9TVMGg
+//logic.js handles the drawing of organisms and the organism class itself
+//Some inspiration from BrainXYZ's particle simulator
 
-m = document.getElementById("life").getContext('2d')
+import {organism} from "./OrganismClass.js";
+import {findOrganism, IterateTowardsOrganism} from "./CheckOrganism.js";
 
-draw=(x,y,colour,s)=>{
-    m.fillStyle = colour
-    m.fillRect(x, y, s, s)
+var master = document.getElementById("sim").getContext('2d')
+
+function draw(x,y,colour,size){
+    master.fillStyle = colour
+    master.fillRect(x, y, size, size)
 }
 // ^ Draw each particle
 
-particles = []
-particle = (x,y, colour)=>{
- return{"x":x, "y":y, "vx":0, "vy":0, "colour":colour}
-}
-// ^ Array holding all particles
+var organisms = []
+// ^ Array holding all organisms
 
-random=()=>{
-    return Math.random()*400+50
+function random(){
+    return Math.random()*50 + 25
 }
-// ^ Random number
+// random number (for location)
 
-create=(number, colour)=>{
-    group=[]
+function create(number, rgb){
+    var group=[]
     for(let i=0; i< number; i++){
-        group.push(particle(random(), random(), colour))
-        particles.push(group[i])
+        var a = Math.trunc(random())
+        var b = Math.trunc(random())
+        
+
+        //var proceduraloffset = parseInt(rgb[1], 16) //non-random spawning for debugging
+    /*
+        var a = (i*5) + proceduraloffset
+        var b = (i*5) + proceduraloffset
+    */
+        group.push(new organism(rgb, a, b))
+        organisms.push(group[i])
     }
     return group
+} //creates a number of organisms of a certain colour in random places
+
+function createAtCoords(rgb, x, y){
+    return new organism(rgb, x, y)
 }
-// ^ Creates an amount of a certain colour particle
 
-rule=(particles1, particles2, g)=>{
-//rule of interaction between particle types
-    for(let i=0; i < particles1.length; i++){
-        fx = 0
-        fy = 0
+function ParentsReproduce(colourParent1, colourParent2, x, y){ //will create a new particle as a 'child'
+    var intParent1 = parseInt(colourParent1.substring(1,7), 16)
+    var intParent2 = parseInt(colourParent2.substring(1,7), 16)
 
-        for (let j=0; j < particles2.length; j++){
-            a = particles1[i]
-            b = particles2[j]
-            dx = a.x - b.x
-            dy = a.y - b.y
-            d = Math.sqrt(dx*dx + dy*dy) //Pythagoras between each particle
-            if (d > 0 && d < 80){
-                F = g * 1/d
-                fx += (F * dx) * 0.01
-                fy += (F * dy) * 0.01
+    var hexChild = Math.trunc((intParent1 + intParent2) / 2)
+    hexChild = hexChild + Math.trunc((Math.random()-0.5)*5) //random variation on result
+    var colourChild = hexChild.toString(16)
+    colourChild = "#" + colourChild
+
+    return createAtCoords(colourChild, x, y)
+}
+//Define particles below
+
+
+for (let i=0; i < 10; i++){
+    let rand1 = (Math.trunc(Math.random()*255)).toString(16)
+    let rand2 = (Math.trunc(Math.random()*255).toString(16))
+    let rand3 = (Math.trunc(Math.random()*255).toString(16))
+
+    let randcolour = "#" + rand1 + rand2 + rand3
+    create(4, randcolour)
+}
+
+create(5, "#ffffff")//will die quick so just act as food
+//Define particles above
+
+
+function update(){ //updates frame
+    master.clearRect(0,0,100,100)
+    draw(0,0, "black", 100)
+    
+    if (organisms.length == 0){
+        console.log("All particles are dead")
+        return false
+    }
+    else{
+        for(let i=0; i<organisms.length; i++){
+
+            if (organisms[i].rgb != "#525252"){ //colour considered food - stops moving
+                var valuesArray = findOrganism((organisms[i].aggro * 10) + 5, organisms[i].x, organisms[i].y)
+                //returns in form 'return [x, y, colour]'
+
+                if(valuesArray[2] == "#525252"){//found a dead pixel
+                    if (organisms.length == 0){
+                        console.log("All particles are eaten")
+                        return false
+                    }
+                    else{
+                        for(let j=0; j<organisms.length; j++){ //linear search to figure out the organism that is dead
+                            if (organisms[j].rgb == "#525252" && organisms[j].isEaten == false){
+                                if (organisms[j].x >= valuesArray[0] && organisms[j].x <= valuesArray[0] + organisms[j].size){
+                                    if (organisms[j].y >= valuesArray[1] && organisms[j].y <= valuesArray[1] + organisms[j].size){ //checks coords and colour
+                                        //if here organisms[j] is probably the dead pixel
+                                        organisms[j].OrganismHasBeenEaten()
+                                        organisms[i].Replenished(organisms[j].size)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                var colourAsDecimal = parseInt((valuesArray[2].substring(1,7)), 16)
+                var friendlyrangeLow = colourAsDecimal - (5*organisms[i].aggro)
+                var friendlyrangehigh = colourAsDecimal + (5*organisms[i].aggro)
+
+                var organismColourAsDecimal = parseInt((organisms[i].rgb.substring(1,7)), 16)
+
+                if (valuesArray[0] != 0 && valuesArray[1] != 0 && (organismColourAsDecimal <= friendlyrangeLow || organismColourAsDecimal >= friendlyrangehigh)){
+                    var valuesArray2 = IterateTowardsOrganism(valuesArray[0], valuesArray[1], organisms[i])
+
+                    organisms[i].NewCoords(valuesArray2[0], valuesArray2[1])
+                }
+                
+                else{//moves a random amount
+                    if(organismColourAsDecimal >= friendlyrangeLow && organismColourAsDecimal <= friendlyrangehigh && (organisms[i].hasReproducedRecently == false) && organisms.length < 200){ //reproduce if in friendly range
+                        //hard cap of 200 organisms (for now)
+                        var newOrganism = ParentsReproduce(organisms[i].rgb, valuesArray[2], organisms[i].x + 1, organisms[i].y + 1)
+                        if (newOrganism != undefined){
+                            organisms.push(newOrganism)
+                        }
+                        organisms[i].hasReproducedRecently = true
+                    }
+                    else{
+                        organisms[i].NewCoords(organisms[i].x + Math.trunc((Math.random() - 0.5) * 5), organisms[i].y + Math.trunc((Math.random() - 0.5) * 5))
+                    }
+                }
+                
+                let xinput = organisms[i].x
+                let yinput = organisms[i].y
+                let colourinput = organisms[i].rgb
+                let sizeinput = organisms[i].size
+
+                //console.log("xinput: ",xinput,"yinput: ",yinput,"colourinput: ",colourinput,"sizeinput: ",sizeinput, "i: ",i)
+                draw(xinput, yinput, colourinput, sizeinput)
+            }
+            else{
+                if (organisms[i].isEaten == false){
+                    draw(organisms[i].x, organisms[i].y, "#525252", organisms[i].size)
+                }
+                else{//organism has no reason to exist
+                    organisms.splice(i,1)
+                }
             }
         }
-
-        a.vx = (a.vx + fx)
-        a.vy = (a.vy + fy)
-        a.x += a.vx
-        a.y += a.vy
-
-        if(a.x <= 0 || a.x >= 1500){ a.vx *= -1}
-        if(a.y <= 0 || a.y >= 700){ a.vy *= -1}
-
-        // if's keep particles in range
-    }
-}
-
-//our various particles
-yellow = create(100,"yellow")
-red = create(100, "red")
-blue = create(100, "blue")
-
-update=()=>{
-    //setting attraction rules (- = repel, + = attract)
-    rule(yellow, yellow, -1)
-    rule(red, red, -0.5)
-    rule(yellow, red, 0.75)
-    rule(blue, yellow, 0.3)
-
-    m.clearRect(0,0,1500,700)
-    draw(0,0, "black", 1500)
-    for(i=0; i<particles.length; i++){
-        draw(particles[i].x, particles[i].y,
-        particles[i].colour, 5)
+    
     }
     requestAnimationFrame(update)
 }
