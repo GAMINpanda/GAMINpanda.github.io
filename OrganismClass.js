@@ -27,10 +27,10 @@ export class organism{ //logic for class organism
     NewCoords(x, y){ //updates x & y position -- makes sure to keep within canvas
         var tempx = this.x
         var tempy = this.y
-        if (x < 500 && x> 0){
+        if (x < 100 && x> 0){
             this.x = x
         }
-        if (y < 300 && y > 0){
+        if (y < 100 && y > 0){
             this.y = y
         }
         this.HungerCalc()
