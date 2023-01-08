@@ -16,7 +16,7 @@ var organisms = []
 // ^ Array holding all organisms
 
 function random(){
-    return Math.random()*50 + 25
+    return Math.random()*100 + 50
 }
 // random number (for location)
 
@@ -70,8 +70,8 @@ create(5, "#ffffff")//will die quick so just act as food
 
 
 function update(){ //updates frame
-    master.clearRect(0,0,100,100)
-    draw(0,0, "black", 100)
+    master.clearRect(0,0,500,300)
+    draw(0,0, "black", 500)
     
     if (organisms.length == 0){
         console.log("All particles are dead")
