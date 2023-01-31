@@ -70,7 +70,7 @@ create(5, "#ffffff")//will die quick so just act as food
 
 
 function update(){ //updates frame
-    master.clearRect(0,0,500,300)
+    master.clearRect(0,0, 500, 300)
     draw(0,0, "black", 500)
     
     if (organisms.length == 0){
