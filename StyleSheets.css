@@ -1,22 +1,26 @@
 body {
-    background-color: #2E3131;
-    color: white;
+    background-color: peachpuff;
+    color: teal;
     font-family: helvetica, monospace;
+    font-size: 1vw;
     text-align: center;
 }
 
 .image {
-    width: 200px;
-    height: 200px;
+    width: 20vw;
+    height: 20vw;
 }
 
 ul {
-    text-align: center;
+    text-align: left;
+    display: inline-block;
     list-style-position: inside;
+    list-style: none;
+    padding: 0;
 }
 
 nav li {
-    display: inline;
+    display: inline-block;
 }
 
 header {
@@ -24,17 +28,22 @@ header {
     background: teal;
     opacity: 1;
     position: fixed;
-    right: 0px;
-    left: 0px;
-    top: 0px;
+    right: 0vw;
+    left: 0vw;
+    top: 0vw;
+}
+
+h1 {
+    font-size: 2vw;
 }
 
 div.a {
     z-index: 1;
     position: relative;
-    top: 150px;
+    top: 10vw;
 }
 
 .whitetext {
-    color: white;
+    color: peachpuff;
+    font-size: 1vw;
 }
