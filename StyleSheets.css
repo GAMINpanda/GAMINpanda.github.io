@@ -11,6 +11,12 @@ body {
     height: 20vw;
 }
 
+.icon {
+    width: 5vw;
+    height: 5vw;
+    display: inline-block;
+}
+
 ul {
     text-align: left;
     display: inline-block;
@@ -21,6 +27,12 @@ ul {
 
 nav li {
     display: inline-block;
+}
+
+hr{
+    display: block;
+    height: 0.1vw;
+    background-color: teal;
 }
 
 header {
@@ -40,7 +52,7 @@ h1 {
 div.a {
     z-index: 1;
     position: relative;
-    top: 10vw;
+    top: 8vw;
 }
 
 .whitetext {
@@ -50,4 +62,12 @@ div.a {
 
 a{
     text-decoration: none;
+}
+
+#cvlocation {
+    scroll-margin-top: 10vw;
+  }
+
+#contact{
+    scroll-margin-top: 10vw;
 }
