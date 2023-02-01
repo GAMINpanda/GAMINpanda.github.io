@@ -1,7 +1,7 @@
 body {
     background-color: peachpuff;
     color: teal;
-    font-family: helvetica, monospace;
+    font-family: tahoma, monospace;
     font-size: 1vw;
     text-align: center;
 }
@@ -46,4 +46,8 @@ div.a {
 .whitetext {
     color: peachpuff;
     font-size: 1vw;
+}
+
+a{
+    text-decoration: none;
 }
