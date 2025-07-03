@@ -28,8 +28,6 @@ export function findOrganism(aggro, x, y){//looks for first case of organism in 
 
             var output = checkOrganism(x, y) //checks to see if an organism exists at a given point
             if (output != "#000000"){
-                //console.log("found organism")
-                //console.log("xOriginal: ",xOriginal,"yOriginal: ",yOriginal,"x: ",x,"y: ",y, "aggro: ",aggro)
                 return [x, y, output];
             }
 
@@ -99,12 +97,6 @@ export function IterateTowardsOrganism(x, y, organismAttacking){//(x,y) of enemy
     x = Math.trunc(x)
     y = Math.trunc(y) 
 
-    /*
-    console.log("x: ",x,"y: ", y)
-    console.log("xdif: ", xdif, "ydif: ", ydif)
-    console.log("organismx: ",organismx,"organismy: ", organismy)
-    console.log("m: ",m)
-    */
 
     return [x, y];
 }

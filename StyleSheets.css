@@ -1,19 +1,35 @@
+:root {
+    --primary-color: teal;
+    --accent-color: peachpuff;
+    --background-color: #222;
+}
+
 body {
-    background-color: peachpuff;
-    color: teal;
-    font-family: tahoma, monospace;
-    font-size: 1vw;
+    background-color: var(--background-color);
+    color: var(--accent-color);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
     text-align: center;
 }
 
-.image {
+.project-img {
     width: 20vw;
-    height: 20vw;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.art-img {
+    width: 30vw;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    margin: 0.5rem;
 }
 
 .icon {
-    width: 5vw;
-    height: 5vw;
+    width: 2rem;
+    height: 2rem;
     display: inline-block;
 }
 
@@ -31,33 +47,42 @@ nav li {
 
 hr{
     display: block;
-    height: 0.1vw;
-    background-color: teal;
+    height: 2px;
+    background-color: var(--primary-color);
 }
 
 header {
     z-index: 2;
-    background: teal;
-    opacity: 1;
+    background: var(--primary-color);
+    color: var(--accent-color);
+    opacity: 0.95;
     position: fixed;
-    right: 0vw;
-    left: 0vw;
-    top: 0vw;
+    right: 0;
+    left: 0;
+    top: 0;
+    padding: 1rem 0;
+    transition: padding 0.3s, background 0.3s;
+}
+
+header.shrink {
+    padding: 0.5rem 0;
+    background: rgba(0,128,128,0.9);
 }
 
 h1 {
-    font-size: 2vw;
+    font-size: 2rem;
+    color: var(--accent-color);
 }
 
 div.a {
     z-index: 1;
     position: relative;
-    top: 8vw;
+    margin-top: 8rem;
 }
 
 .whitetext {
-    color: peachpuff;
-    font-size: 1vw;
+    color: var(--accent-color);
+    font-size: 1rem;
 }
 
 a{
@@ -65,9 +90,30 @@ a{
 }
 
 #cvlocation {
-    scroll-margin-top: 10vw;
-  }
+    scroll-margin-top: 8rem;
+}
 
 #contact{
-    scroll-margin-top: 10vw;
+    scroll-margin-top: 8rem;
+}
+
+.section-spacing {
+    margin-top: 5rem;
+}
+
+nav a:hover {
+    opacity: 0.7;
+}
+
+nav a.active {
+    border-bottom: 2px solid var(--accent-color);
+}
+
+#sim {
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+#cv {
+    background-color: white;
 }

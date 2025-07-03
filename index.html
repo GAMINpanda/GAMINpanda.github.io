@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-			<link rel="stylesheet" href="StyleSheets.css" />
-		</head>
+        <html>
+                <head>
+                        <meta name="viewport" content="width=device-width, initial-scale=1">
+                        <link rel="preconnect" href="https://fonts.googleapis.com">
+                        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+                        <link rel="stylesheet" href="StyleSheets.css" />
+                </head>
 		<body>
-			<header>
-				<h1 style="color:peachpuff"> Alexander Mitchiner</h1>
+                        <header>
+                                <h1> Alexander Mitchiner</h1>
 				<nav>
 					<ul>
 						<li><a href="index.html" class="whitetext">Home</a></li>
@@ -15,8 +19,8 @@
 				</nav>
 			</header>
 			<div class="a">
-				<section>
-					<h2 style="color: teal;">
+                                <section>
+                                        <h2>
 						About Me
 					</h2>
 					<p>Hello my name is Alexander and I a student studying Computer Science at Imperial College London</p>
@@ -26,25 +30,25 @@
 						<li>Computer Deal Hunting enthusiast and PC building extraordinaire</li>
 					</ul>
 				</section>
-				<section style="margin-top:5vw;">
-					<h2 style="color: teal;">
+                                <section class="section-spacing">
+                                        <h2>
 						Projects I've been working on:
 					</h2>
 					<a href="https://github.com/GAMINpanda/VSIM">
-					<img class="image" src="images/Screenshot (223).png" alt="An interactive Virus Simulator"/>
+                                        <img class="project-img" src="images/Screenshot (223).png" alt="An interactive Virus Simulator"/>
 					</a>
 					<a href="https://github.com/GAMINpanda/New-Unity-Project">
-						<img class="image" src="images/Screenshot (157).png" alt="Procedural Terrain System in Unity"/>
+                                                <img class="project-img" src="images/Screenshot (157).png" alt="Procedural Terrain System in Unity"/>
 					</a>
 					<a href="https://github.com/GAMINpanda/TimetablerSoftware">
-						<img class="image" src="images/Screenshot (156).png" alt="A Timetabling Software"/>
+                                                <img class="project-img" src="images/Screenshot (156).png" alt="A Timetabling Software"/>
 					</a>
 					<a href="https://github.com/GAMINpanda/LifeSimulation">
 						<canvas id="sim" height="200" width = "200"></canvas>
 					</a>
 				</section>
-				<section style="margin-top:5vw;" id="cvlocation">
-					<h2 style="color: teal;">
+                                <section class="section-spacing" id="cvlocation">
+                                        <h2>
 						Curriculum Vitae
 					</h2>
 					<object data="cv.pdf" type="application/pdf" id="cv" width="1000" height="500">
@@ -54,36 +58,37 @@
 						</object>
 					<script src="cvresize.js"></script>
 				</section>
-				<section style="margin-top:5vw;">
-					<h2 style="color: teal;">
+                                <section class="section-spacing">
+                                        <h2>
 						Some examples of my art:
 					</h2>
-					<img src="images/tentacleman.png" alt="A man with tentacles for hair" width="425vw"/>
-					<img src="images/tearsinrainwithman.png" alt="A man standing in a courtyard with the night sky above him" width="755vw"/>
-					<img src="images/me_but_cute_and_young.png" alt="A digital painting of a younger self" width="300vw"/>
+                                        <img class="art-img" src="images/tentacleman.png" alt="A man with tentacles for hair"/>
+                                        <img class="art-img" src="images/tearsinrainwithman.png" alt="A man standing in a courtyard with the night sky above him"/>
+                                        <img class="art-img" src="images/me_but_cute_and_young.png" alt="A digital painting of a younger self"/>
 				</section>
 				<section id="contact">
 					<hr>
 					<nav>
 						<ul>
 							<li>
-								<a href="https://www.youtube.com/channel/UCqmTxpB8kqBPMWqyi9L9KOg" style="color: teal;"><img class="icon" src="images/youtubelogo.png"></a>
+                                                                <a href="https://www.youtube.com/channel/UCqmTxpB8kqBPMWqyi9L9KOg"><img class="icon" src="images/youtubelogo.png"></a>
 							</li>
 							<li>
-								<a href="https://github.com/GAMINpanda" style="color: teal;"><img class="icon" src="images/girhublogo.png"></a>
+                                                                <a href="https://github.com/GAMINpanda"><img class="icon" src="images/girhublogo.png"></a>
 							</li>
 							<li>
-								<a href="https://www.instagram.com/gamin_panda/" style="color: teal;"><img class="icon" src="images/instalogo.png"></a>
+                                                                <a href="https://www.instagram.com/gamin_panda/"><img class="icon" src="images/instalogo.png"></a>
 							</li>
 							<li>
-								<a href="https://www.linkedin.com/in/alexander-mitchiner/" style="color: teal;"><img class="icon" src="images/linkedinlogo.png"></a>
+                                                                <a href="https://www.linkedin.com/in/alexander-mitchiner/"><img class="icon" src="images/linkedinlogo.png"></a>
 							</li>
 						</ul>
 					</nav>
 				</section>
 			</div>
 
-			<script src="resize.js"></script>
-			<script type="module" src="logic.js"></script>
-		</body>
-	</html>
+                        <script src="resize.js"></script>
+                        <script type="module" src="logic.js"></script>
+                        <script src="ui.js"></script>
+                </body>
+        </html>
