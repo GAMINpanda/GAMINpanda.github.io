@@ -74,7 +74,6 @@ function update(){ //updates frame
     draw(0,0, "black", 500)
     
     if (organisms.length == 0){
-        console.log("All particles are dead")
         return false
     }
     else{
@@ -86,7 +85,6 @@ function update(){ //updates frame
 
                 if(valuesArray[2] == "#525252"){//found a dead pixel
                     if (organisms.length == 0){
-                        console.log("All particles are eaten")
                         return false
                     }
                     else{
@@ -134,7 +132,6 @@ function update(){ //updates frame
                 let colourinput = organisms[i].rgb
                 let sizeinput = organisms[i].size
 
-                //console.log("xinput: ",xinput,"yinput: ",yinput,"colourinput: ",colourinput,"sizeinput: ",sizeinput, "i: ",i)
                 draw(xinput, yinput, colourinput, sizeinput)
             }
             else{
