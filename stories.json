@@ -1,18 +1,54 @@
 {
-  "updated": "2026-04-22T13:08:51Z",
+  "updated": "2026-04-22T14:35:15.361Z",
   "username": "GAMIN_panda",
   "stories": [
+    {
+      "id": "410461296",
+      "title": "Look My Child Upon the Stars",
+      "description": "Arthur has an important presentation tomorrow (which his cuddly bear, Miss Tiddles, has a lot to say about) but in the meantime he might just go on a magical walk and clear his mind.",
+      "cover": "https://img.wattpad.com/cover/410461296-256-k842735.jpg",
+      "url": "https://www.wattpad.com/story/410461296-look-my-child-upon-the-stars",
+      "tags": [
+        "children",
+        "fantasy",
+        "magic",
+        "shortstory"
+      ],
+      "numParts": 1,
+      "readCount": 0,
+      "voteCount": 0,
+      "completed": true
+    },
     {
       "id": "410458632",
       "title": "Blabbyblobtomitrons",
       "description": "NOT Blobbyblabtomitrons",
       "cover": "https://img.wattpad.com/cover/410458632-256-k838059.jpg",
       "url": "https://www.wattpad.com/story/410458632-blabbyblobtomitrons",
-      "tags": ["funny", "scifi", "shortstory"],
+      "tags": [
+        "funny",
+        "scifi",
+        "shortstory"
+      ],
       "numParts": 2,
       "readCount": 0,
       "voteCount": 0,
-      "completed": false
+      "completed": true
+    },
+    {
+      "id": "410460852",
+      "title": "Look me in the eyes",
+      "description": "A short story about a man who's job it is to tell parents that their children have died at war",
+      "cover": "https://img.wattpad.com/cover/410460852-256-k841902.jpg",
+      "url": "https://www.wattpad.com/story/410460852-look-me-in-the-eyes",
+      "tags": [
+        "shortstory",
+        "war"
+      ],
+      "numParts": 1,
+      "readCount": 0,
+      "voteCount": 0,
+      "completed": true
     }
   ]
 }
