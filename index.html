@@ -1,100 +1,60 @@
 <!DOCTYPE html>
-        <html>
-                <head>
-                        <meta name="viewport" content="width=device-width, initial-scale=1">
-                        <link rel="preconnect" href="https://fonts.googleapis.com">
-                        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-                        <link rel="stylesheet" href="StyleSheets.css" />
-                </head>
-		<body>
-                        <header>
-                                <h1> Alexander Mitchiner</h1>
-				<nav>
-					<ul>
-						<li><a href="index.html" class="whitetext">Home</a></li>
-						<li><a href="index.html#cvlocation" class="whitetext">CV</a></li>
-						<li><a href="index.html#contact" class="whitetext">Contact</a></li>
-					</ul>
-				</nav>
-			</header>
-			<div class="a">
-                                <section>
-                                        <h2>
-						About Me
-					</h2>
-					<p>Hello my name is Alexander and I a student studying Computer Science at Imperial College London</p>
-					<ul>
-						<li>Coding experience in Frontend and Backend Technologies, especially JavaScript and C#</li>
-						<li>Top A-Level Grades A*A*A*A with A*s in Maths, Further Maths and Computer Science</li>
-						<li>Computer Deal Hunting enthusiast and PC building extraordinaire</li>
-					</ul>
-				</section>
-        <section class="section-spacing">
-                <h2>
-                        Projects I've been working on:
-                </h2>
-                <div class="project-list">
-                        <a href="https://github.com/GAMINpanda/VSIM">
-                                <img class="project-img" src="images/Screenshot (223).png" alt="An interactive Virus Simulator"/>
-                        </a>
-                        <a href="https://github.com/GAMINpanda/New-Unity-Project">
-                                <img class="project-img" src="images/Screenshot (157).png" alt="Procedural Terrain System in Unity"/>
-                        </a>
-                        <a href="https://github.com/GAMINpanda/TimetablerSoftware">
-                                <img class="project-img" src="images/Screenshot (156).png" alt="A Timetabling Software"/>
-                        </a>
-                        <a href="https://github.com/GAMINpanda/LifeSimulation">
-                                <canvas id="sim" height="200" width="200"></canvas>
-                        </a>
-                </div>
-        </section>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alexander Mitchiner | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="StyleSheets.css" />
+</head>
+<body>
+<header class="site-header">
+    <div class="nav-wrap">
+        <h1 class="site-title">Alexander Mitchiner</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="art.html">Art</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-        <section class="section-spacing" id="cvlocation">
-                <h2>
-						Curriculum Vitae
-					</h2>
-					<object data="cv.pdf" type="application/pdf" id="cv" width="1000" height="500">
-						<p>Your web browser doesn't have a PDF plugin.
-						Instead you can <a href="Profile.pdf">click here to
-						download the PDF file.</a></p>
-						</object>
-					<script src="cvresize.js"></script>
-				</section>
-                                <section class="section-spacing">
-                                        <h2>
-						Some examples of my art:
-					</h2>
-                                        <img class="art-img" src="images/tentacleman.png" alt="A man with tentacles for hair"/>
-                                        <img class="art-img" src="images/tearsinrainwithman.png" alt="A man standing in a courtyard with the night sky above him"/>
-                                        <img class="art-img" src="images/me_but_cute_and_young.png" alt="A digital painting of a younger self"/>
-				</section>
-				<section id="contact">
-					<hr>
-					<nav>
-						<ul>
-							<li>
-                                                                <a href="https://www.youtube.com/channel/UCqmTxpB8kqBPMWqyi9L9KOg"><img class="icon" src="images/youtubelogo.png"></a>
-							</li>
-							<li>
-                                                                <a href="https://github.com/GAMINpanda"><img class="icon" src="images/girhublogo.png"></a>
-							</li>
-							<li>
-                                                                <a href="https://www.instagram.com/gamin_panda/"><img class="icon" src="images/instalogo.png"></a>
-							</li>
-							<li>
-                                                                <a href="https://www.linkedin.com/in/alexander-mitchiner/"><img class="icon" src="images/linkedinlogo.png"></a>
-							</li>
-							<li>
-								<a href="https://substack.com/@alexandermitchiner"><img class="icon" src="images/substackfill.png"></a>
-							</li>
-						</ul>
-					</nav>
-				</section>
-			</div>
+<main class="page">
+    <section class="hero">
+        <div class="portrait-placeholder">
+            Self portrait<br />
+            (replace with your image)
+        </div>
+        <div>
+            <h2>Hi, I’m Alexander.</h2>
+            <p class="muted">Add your personal introduction here.</p>
+            <p>
+                This refreshed site is now split into separate pages for easier browsing: Home, Articles, Art, and
+                Contact.
+            </p>
+        </div>
+    </section>
 
-                        <script src="resize.js"></script>
-                        <script type="module" src="logic.js"></script>
-                        <script src="ui.js"></script>
-                </body>
-        </html>
+    <section class="grid">
+        <article class="card">
+            <h3>What I do</h3>
+            <p class="muted">
+                Use this card to describe your work and interests.
+            </p>
+        </article>
+        <article class="card">
+            <h3>Recent writing</h3>
+            <p class="muted">
+                Your newest Substack posts are pulled automatically on the Articles page.
+            </p>
+            <a href="articles.html">Go to Articles →</a>
+        </article>
+    </section>
+</main>
+</body>
+</html>
