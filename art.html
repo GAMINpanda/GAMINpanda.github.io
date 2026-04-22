@@ -17,6 +17,7 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="articles.html">Articles</a></li>
+                <li><a href="stories.html">Stories</a></li>
                 <li><a class="active" href="art.html">Art</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -27,13 +28,19 @@
 <main class="page">
     <section class="card">
         <h2>Artwork</h2>
-        <p class="muted">A small gallery of your digital pieces.</p>
-        <div class="art-grid">
-            <img class="art-img" src="images/tentacleman.png" alt="A man with tentacles for hair" />
-            <img class="art-img" src="images/tearsinrainwithman.png" alt="A man standing in a courtyard with the night sky above him" />
-            <img class="art-img" src="images/me_but_cute_and_young.png" alt="A digital painting of a younger self" />
-        </div>
+        <p class="muted">A small gallery of some of my art pieces.</p>
+        <div class="art-grid"></div>
     </section>
 </main>
+
+<div class="lightbox" id="lightbox" hidden aria-hidden="true" role="dialog" aria-label="Image viewer">
+    <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">&#10094;</button>
+    <img class="lightbox-img" alt="" />
+    <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">&#10095;</button>
+</div>
+
+<script src="art.js"></script>
+<script src="lightbox.js"></script>
 </body>
 </html>
