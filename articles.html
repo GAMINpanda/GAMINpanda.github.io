@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alexander Mitchiner | Articles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="StyleSheets.css" />
+</head>
+<body>
+<header class="site-header">
+    <div class="nav-wrap">
+        <h1 class="site-title">Alexander Mitchiner</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="articles.html">Articles</a></li>
+                <li><a href="art.html">Art</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="page">
+    <section class="card">
+        <h2>Recent Substack Articles</h2>
+        <p class="muted">Latest posts embedded from Substack.</p>
+
+        <div class="substack-embed-wrap">
+            <!-- Feed embed code -->
+            <div data-supascribe-embed-id="333356448446" data-supascribe-feed></div>
+        </div>
+
+        <p class="muted substack-fallback">
+            If the feed does not load, you can read directly on
+            <a href="https://substack.com/@alexandermitchiner" target="_blank" rel="noopener noreferrer">Substack</a>.
+        </p>
+    </section>
+</main>
+
+<!-- Supascribe Script -->
+<script src="https://js.supascribe.com/v1/loader/QyRDDALyS6gugD42KZ1LYynovox2.js" async></script>
+</body>
+</html>
