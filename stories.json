@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-22T14:35:15.361Z",
+  "updated": "2026-04-23T08:02:16.046Z",
   "username": "GAMIN_panda",
   "stories": [
     {
@@ -15,7 +15,7 @@
         "shortstory"
       ],
       "numParts": 1,
-      "readCount": 0,
+      "readCount": 1,
       "voteCount": 0,
       "completed": true
     },
@@ -31,7 +31,7 @@
         "shortstory"
       ],
       "numParts": 2,
-      "readCount": 0,
+      "readCount": 1,
       "voteCount": 0,
       "completed": true
     },
@@ -46,7 +46,7 @@
         "war"
       ],
       "numParts": 1,
-      "readCount": 0,
+      "readCount": 1,
       "voteCount": 0,
       "completed": true
     }
